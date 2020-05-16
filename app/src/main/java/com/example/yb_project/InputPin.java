@@ -1,6 +1,7 @@
 package com.example.yb_project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -28,6 +29,9 @@ public class InputPin extends AppCompatActivity {
 
         pinview = (Pinview)findViewById(R.id.pinview);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("save"
+                ,MODE_PRIVATE);
+
         pinview.setPinViewEventListener(new Pinview.PinViewEventListener() {
             @Override
             public void onDataEntered(Pinview pinview, boolean fromUser) {
@@ -35,8 +39,13 @@ public class InputPin extends AppCompatActivity {
 
                 boolean cek = Objects.equals(pin, dataPin);
                 if (cek){
-                    Intent intent = new Intent(InputPin.this, DashboardActivity.class);
-                    startActivity(intent);
+                    if (sharedPreferences.getBoolean("value", false)){
+                        Intent intent = new Intent(InputPin.this, SplashActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Intent intent = new Intent(InputPin.this, DashboardActivity.class);
+                        startActivity(intent);
+                    }
                     Log.d(pin, "Saved Pin: " + pinview.getValue());
                 }else{
                    Toast.makeText(getApplicationContext(), "Pin Tidak Sama", Toast.LENGTH_LONG).show();

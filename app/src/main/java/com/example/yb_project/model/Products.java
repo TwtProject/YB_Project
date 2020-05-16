@@ -7,34 +7,63 @@ import java.util.List;
 
 public class Products {
 
-    @SerializedName("products")
+    @SerializedName("data")
     @Expose
-    private List<Product> products = null;
-    public List<Product> getProducts(){
-        return products;
+    private List<Product> data = null;
+
+    public List<Product> getProducts() {
+        return data;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setData(List<Product> data) {
+        this.data = data;
     }
 
     public class Product{
-        private String url, imgURL;
 
-        public String getImgURL() {
-            return imgURL;
+        @SerializedName("id")
+        @Expose
+        private String id;
+        @SerializedName("nama_produk")
+        @Expose
+        private String namaProduk;
+        @SerializedName("link")
+        @Expose
+        private String link;
+        @SerializedName("gambar")
+        @Expose
+        private String gambar;
+
+        public String getId() {
+            return id;
         }
 
-        public void setImgURL(String imgURL) {
-            this.imgURL = imgURL;
+        public void setId(String id) {
+            this.id = id;
         }
 
-        public String getUrl() {
-            return url;
+        public String getNamaProduk() {
+            return namaProduk;
         }
 
-        public void setUrl(String url) {
-            this.url = url;
+        public void setNamaProduk(String namaProduk) {
+            this.namaProduk = namaProduk;
+        }
+
+        public String getLink() {
+            return link;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public String getGambar() {
+            return gambar;
+        }
+
+        public void setGambar(String gambar) {
+            this.gambar = gambar;
         }
     }
 }

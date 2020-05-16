@@ -1,7 +1,6 @@
 package com.example.yb_project.adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,28 +11,29 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.yb_project.R;
 import com.example.yb_project.model.Products;
+import com.example.yb_project.model.Settings;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class ViewPagerHeaderAdapter extends PagerAdapter {
+public class ViewPagerSettingAdapter extends PagerAdapter {
 
-    private List<Products.Product> products;
+    private List<Settings.Setting> settings;
     private Context context;
     private static ClickListener clickListener;
 
-    public ViewPagerHeaderAdapter(List<Products.Product> products, Context context){
-        this.products = products;
+    public ViewPagerSettingAdapter(List<Settings.Setting> settings, Context context){
+        this.settings = settings;
         this.context = context;
     }
 
     public void setOnItemClickListener(ClickListener clickListener){
-        ViewPagerHeaderAdapter.clickListener = clickListener;
+        ViewPagerSettingAdapter.clickListener = clickListener;
     }
 
     @Override
     public int getCount() {
-        return products.size();
+        return settings.size();
     }
 
     @Override
@@ -45,14 +45,14 @@ public class ViewPagerHeaderAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position){
         View view = LayoutInflater.from(context).inflate(
-                R.layout.item_view_pager_header,
+                R.layout.item_view_pager_whatsapp,
                 container,
                 false
         );
 
-        ImageView headerThumb = view.findViewById(R.id.headerThumb);
-        String strHeaderThumb = products.get(position).getGambar();
-        Picasso.get().load(strHeaderThumb).into(headerThumb);
+        ImageView whatsappThumb = view.findViewById(R.id.whatsappThumb);
+        String strWhatsappThumb = settings.get(position).getThumb();
+        Picasso.get().load(strWhatsappThumb).into(whatsappThumb);
 
         view.setOnClickListener(v -> clickListener.onClick(v, position));
 

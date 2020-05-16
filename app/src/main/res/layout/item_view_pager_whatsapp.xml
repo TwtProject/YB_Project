@@ -6,18 +6,17 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="80dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
-                android:id="@+id/headerThumb"
+                android:id="@+id/whatsappThumb"
                 android:src="@drawable/sample_image_header"
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
