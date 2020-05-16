@@ -4,13 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@color/colorPrimary">
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_compat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Splash Screen"
+        android:textColor="@color/colorWhite"
         android:textSize="25sp"></androidx.appcompat.widget.SwitchCompat>
 
     <LinearLayout
@@ -23,7 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/btn_simpan"
-            android:text="Simpan">
+            android:background="@color/colorPrimaryDark"
+            android:text="Simpan"
+            android:textColor="@color/colorWhite">
 
         </Button>
         <Button
@@ -31,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/btn_batal"
+            android:background="@color/colorWhiteDark"
             android:text="Batal">
 
         </Button>
