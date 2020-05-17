@@ -33,7 +33,7 @@ public class ViewPagerSettingAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return settings.size();
+         return settings.size();
     }
 
     @Override

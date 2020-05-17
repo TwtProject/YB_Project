@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class YBClient {
 
-    private static final String BASE_URL = "https://backoffice.jees168.xyz/";
+    private static final String BASE_URL = "https://ybproject.jees168.xyz/";
 
     public static Retrofit getYBClient(){
         return new Retrofit.Builder().baseUrl(BASE_URL)

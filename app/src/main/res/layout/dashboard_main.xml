@@ -57,7 +57,7 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPagerHeader"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="155dp"
                 android:layout_below="@+id/cardSearch"
                 android:clipToPadding="false"
                 android:foregroundGravity="center"
@@ -70,7 +70,7 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPagerWhatsapp"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="75dp"
                 android:layout_below="@+id/viewPagerHeader"
                 android:clipToPadding="false"
                 android:foregroundGravity="center"
