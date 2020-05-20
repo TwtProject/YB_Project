@@ -28,6 +28,8 @@ import com.example.yb_project.model.Products;
 import com.example.yb_project.model.Settings;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,6 +58,36 @@ public class DashboardActivity extends AppCompatActivity implements DashboardVie
         presenter = new DashboardPresenter(this);
         presenter.getProducts();
         presenter.getSettings();
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 4000);
+    }
+
+    public class MyTimerTask extends TimerTask{
+
+        @Override
+        public void run() {
+            DashboardActivity.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (viewPagerHeader.getCurrentItem() == 0){
+                        viewPagerHeader.setCurrentItem(1);
+                    }else if (viewPagerHeader.getCurrentItem() == 1){
+                        viewPagerHeader.setCurrentItem(2);
+                    }else if (viewPagerHeader.getCurrentItem() == 2){
+                        viewPagerHeader.setCurrentItem(3);
+                    }else if (viewPagerHeader.getCurrentItem() == 3){
+                        viewPagerHeader.setCurrentItem(4);
+                    }else if (viewPagerHeader.getCurrentItem() == 4){
+                        viewPagerHeader.setCurrentItem(5);
+                    }else if (viewPagerHeader.getCurrentItem() == 5){
+                        viewPagerHeader.setCurrentItem(6);
+                    }else{
+                        viewPagerHeader.setCurrentItem(0);
+                    }
+                }
+            });
+        }
     }
 
     @Override
